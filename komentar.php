@@ -1,7 +1,7 @@
 <?php 
 	session_start();
     include 'db.php';
-	if($_SESSION['status-login'] != true){
+	if($_SESSION['status-loginuser'] != true){
 		echo '<script>window.location="loginuser.php"</script>';
 	}
 

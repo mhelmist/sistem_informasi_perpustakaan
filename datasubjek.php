@@ -58,8 +58,8 @@
 							<td><?php echo $row['nomor_subjek'] ?></td>
 							<td><?php echo $row['nama_subjek'] ?></td>
 							<td>
-								<a href="editsubjek.php?id=<?php echo $row['nomor_subjek'] ?>">Edit</a> || <a href="proseshapus.php?ids=<?php echo $row['nomor_subjek'] ?>" onclick="return confirm('Apakah ingin menghapus ?')">Hapus</a>
-							</td>
+							<center>	<a href="editsubjek.php?id=<?php echo $row['nomor_subjek'] ?>"><img src="img/edit.png" width=25px ></a><br> <a href="proseshapus.php?ids=<?php echo $row['nomor_subjek'] ?>" onclick="return confirm('Apakah ingin menghapus ?')"><img src="img/hapus.png" width=20px></a>
+						</center>	</td>
 						</tr>
 						<?php }}else{ ?>
 							<tr>

@@ -19,6 +19,7 @@
 			<h1><a href="index.php">Sistem Informasi Perpustakaan</a></h1>
 			<ul>
 				<li><a href="koleksi.php">Koleksi</a></li>
+                <li><a href="logoutuser.php">Logout Anggota</a></li>
 			</ul>
 		</div>
 	</header>
@@ -89,13 +90,13 @@
 	<div class="footer">
 		<div class="container">
 			<h4>Alamat</h4>
-			<p>Jalan Mekarjaya No. 26, jakarta</p>
+			<p><?php echo $o->alamat_pegawai ?></p>
 
 			<h4>Email</h4>
-			<p>perpustakaan123@yahoo.com</p>
+			<p><?php echo $o->email_pegawai ?></p>
 
-			<h4>Nomor Telepon</h4>
-			<p>0251 - 781312</p>
+			<h4>No. Hp</h4>
+			<p><?php echo $o->nomor_telepon ?></p>
 			<small>Copyright &copy; 2021.</small>
 		</div>
 	</div>

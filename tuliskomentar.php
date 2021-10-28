@@ -1,12 +1,15 @@
 <?php 
 	session_start();
 	include 'db.php';
-	if($_SESSION['status-login'] != true){
+	if($_SESSION['status-loginuser'] != true){
 		echo '<script>window.location="loginuser.php"</script>';
 
 	}
 	$koleksi = mysqli_query($conn, "SELECT * FROM koleksi WHERE nomor_panggil_koleksi = '".$_GET['id']."' ");
 	$k = mysqli_fetch_object($koleksi);
+
+    
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +24,7 @@
 	<!-- header -->
 	<header>
 		<div class="container">
-			<h1><a href="dashboard.php">Sistem Informasi Perpustakaan</a></h1>
+			<h1><a href="koleksi.php">Sistem Informasi Perpustakaan</a></h1>
 			
 		</div>
 	</header>
@@ -34,10 +37,7 @@
 			<div class="box">
 				<form action="" method="POST" enctype="multipart/form-data">
 					
-					
-                
-					<input type="text" name="nomoruser" class="input-control" value="<?php echo $_SESSION['id'] ?>" required>
-					<input type="text" name="username" class="input-control" value="<?php echo $_SESSION['id'] ?>" required>
+				  	<input type="text" name="username" class="input-control" placeholder="Nama Anda" required>
                     <input type="text" name="nomor_panggil_koleksi" class="input-control" value="<?php echo $k->nomor_panggil_koleksi ?>" required>
 					<input type="text" name="komentar" class="input-control" placeholder="Tulis Komentar/Ulasan" required>
 					<input type="submit" name="submit" value="KIRIM" class="btn">
@@ -46,7 +46,7 @@
 				<?php 
 					if(isset($_POST['submit'])){
 
-						$nomoruser = $_POST['nomoruser']; 
+						
 						$username = $_POST['username']; 
 						$nomor_panggil_koleksi = $_POST['nomor_panggil_koleksi']; 
 						$komentar = $_POST['komentar']; 
@@ -55,8 +55,7 @@
 							$insert = mysqli_query($conn, "INSERT INTO ulasan_koleksi VALUES (
 							
 							NULL,
-							'".$nomoruser."',
-							'".$username."',							
+                           	'".$username."',							
 							'".$nomor_panggil_koleksi."',
 							'".$komentar."'
 							

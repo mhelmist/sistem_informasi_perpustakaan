@@ -1,7 +1,9 @@
 <?php 
 	error_reporting(0);
 	include 'db.php';
-	
+	$kontak = mysqli_query($conn, "SELECT nomor_telepon, email_pegawai, alamat_pegawai FROM data_operator WHERE nomor_pegawai = 198723");
+	$o = mysqli_fetch_object($kontak);
+
 	$koleksi = mysqli_query($conn, "SELECT * FROM koleksi WHERE nomor_panggil_koleksi = '".$_GET['id']."' ");
 	$k = mysqli_fetch_object($koleksi);
 ?>
@@ -53,15 +55,8 @@
 					<p>Penerbit : <?php echo $k->penerbit_koleksi ?></p>
 					<p>ISBN : <?php echo $k->isbn ?></p>
 					<p>Jumlah Ketersediaan : <?php echo $k->jumlah_koleksi ?></p>
-					
 
-					
-						
-					<h4><a href="komentar.php?id=<?php echo $k->nomor_panggil_koleksi ?>">Lihat Komentar</a></h4>
-					 
-						
-					
-						
+                    <h4><a href="komentar.php?id=<?php echo $k->nomor_panggil_koleksi ?>">Lihat Komentar</a></h4>
 				</div>
 			</div>
 		</div>
@@ -71,13 +66,13 @@
 	<div class="footer">
 	<div class="container">
 			<h4>Alamat</h4>
-			<p>Jalan Mekarjaya No. 26, Jakarta</p>
+			<p><?php echo $o->alamat_pegawai ?></p>
 
 			<h4>Email</h4>
-			<p>perpustakaan123@yahoo.com</p>
+			<p><?php echo $o->email_pegawai ?></p>
 
 			<h4>No. Hp</h4>
-			<p>0251 - 781312</p>
+			<p><?php echo $o->nomor_telepon ?></p>
 			<small>Copyright &copy; 2021.</small>
 		</div>
 	</div>

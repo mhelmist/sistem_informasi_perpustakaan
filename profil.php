@@ -73,8 +73,8 @@
 							<td><img src="operator/<?php echo $row['foto'] ?>"width="50px"></td>
 							<td><?php echo ($row['status'] == 0)? 'Tidak Aktif':'Aktif'?></td>
 							<td>
-								<a href="editprofil.php?id=<?php echo $row['nomor_pegawai'] ?>">Edit</a> || <a href="proseshapus.php?id=<?php echo $row['nomor_pegawai'] ?>" onclick="return confirm('Apakah ingin menghapus ?')">Hapus</a>
-							</td>
+							<center>	<a href="editprofil.php?id=<?php echo $row['nomor_pegawai'] ?>"><img src="img/edit.png" width=25px></a> &nbsp <a href="proseshapus.php?id=<?php echo $row['nomor_pegawai'] ?>" onclick="return confirm('Apakah ingin menghapus ?')"><img src="img/hapus.png" width=20px></a>
+						</center>	</td>
 						</tr>
 						<?php }}else{ ?>
 						<tr>

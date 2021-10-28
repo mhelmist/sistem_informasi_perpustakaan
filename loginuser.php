@@ -9,7 +9,9 @@
         
         
         <div class="box-login">
-            <h2>Login</h2>
+        
+            <h2>Login Anggota</h2>
+            <p><a href="reguser.php">Atau daftar menjadi anggota</a></p>
             <form action="" method="post">
                 <input type="text" name="user" placeholder="masukkan username" class="input-control">
 			    <input type="password" name="pass" placeholder="masukkan password" class="input-control">
@@ -30,9 +32,9 @@
             
             if(mysqli_num_rows($cek) > 0){
             $d = mysqli_fetch_object($cek);
-            $_SESSION['status-login'] = true;
+            $_SESSION['status-loginuser'] = true;
             $_SESSION['p-global'] = $d;
-            $_SESSION['id'] = $d->username;
+            $_SESSION['iduser'] = $d->username;
                 echo '<script>window.location="koleksi.php"</script>';}
             else{echo '<script>alert("username atau password Anda salah!")</script>';}
         }

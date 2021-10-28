@@ -77,7 +77,7 @@
 							<td><img src="koleksi/<?php echo $row['gambar_koleksi'] ?>"width="50px"></td>
 							<td><?php echo ($row['status_koleksi'] == 0)? 'Tidak Tersedia':'Tersedia'?></td>
 							<td>
-								<a href="editkoleksi.php?id=<?php echo $row['nomor_panggil_koleksi'] ?>">Edit</a> || <a href="proseshapus.php?idk=<?php echo $row['nomor_panggil_koleksi'] ?>" onclick="return confirm('Apakah ingin menghapus ?')">Hapus</a>
+							<center>	<a href="editkoleksi.php?id=<?php echo $row['nomor_panggil_koleksi'] ?>"><img src="img/edit.png" width=25px></a>  <a href="proseshapus.php?idk=<?php echo $row['nomor_panggil_koleksi'] ?>" onclick="return confirm('Apakah ingin menghapus ?')"><img src="img/hapus.png" width=20px></a> </center>
 							</td>
 						</tr>
 												<?php }}else{ ?>

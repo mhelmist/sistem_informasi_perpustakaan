@@ -17,7 +17,6 @@
                 <ul>
                     <li><a href="koleksi.php">Koleksi</a></li>
                     <li><a href="login.php">Login Operator</a></li>
-					<li><a href="loginuser.php">Login Operator</a></li>
                 </ul>
         </div>
     </header>
@@ -45,9 +44,7 @@
             <div class="col-5">
                 <img src="img/iconsubjek1.jpg" width="50px" style="margin-bottom: 5px;">
                 <p><?php echo $s['nama_subjek']?></p>
-				
             </div>
-			
             </a>
                 <?php } }else {?>
                     <p>Tidak ada Subjek</p>
